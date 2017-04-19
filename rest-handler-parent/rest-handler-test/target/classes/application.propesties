@@ -1,0 +1,2 @@
+handler.dispatcher.enable=true
+handler.dispatcher.path=/test

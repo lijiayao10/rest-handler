@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.iwjw.fin.handler</groupId>
+	<artifactId>rest-handler-parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>rest-handler</module>
+		<module>rest-handler-common-parent</module>
+		<module>rest-handler-service-parent</module>
+		<module>rest-handler-core-parent</module>
+	</modules>
+
+	<properties>
+		<jdk.version>1.7</jdk.version>
+		<spring.boot.version>1.3.8.RELEASE</spring.boot.version>
+		<guava.version>20.0</guava.version>
+		<lombok.version>1.16.10</lombok.version>
+		<jackson.version>2.6.7</jackson.version>
+
+		<rest-handler-common>1.0-SNAPSHOT</rest-handler-common>
+		<rest-handler-service>1.0-SNAPSHOT</rest-handler-service>
+
+		<netfinworks.common.version>2.0.1-SNAPSHOT</netfinworks.common.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>1.3.8.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.iwjw.fin.handler.common</groupId>
+				<artifactId>rest-handler-common-domain</artifactId>
+				<version>${rest-handler-common}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.iwjw.fin.handler.common</groupId>
+				<artifactId>rest-handler-common-util</artifactId>
+				<version>${rest-handler-common}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.iwjw.fin.handler.service</groupId>
+				<artifactId>rest-handler-service-core</artifactId>
+				<version>${rest-handler-service}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netfinworks.common</groupId>
+				<artifactId>netfinworks-common-lang</artifactId>
+				<version>${netfinworks.common.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
